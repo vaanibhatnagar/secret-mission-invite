@@ -77,7 +77,7 @@ export default function Invitation() {
     {
       icon: MapPin,
       label: "Location",
-      value: "The Secret Vault — Our Home. Exact coordinates disclosed upon confirmed RSVP.",
+      value: "The Secret Vault — Our Home",
     },
     {
       icon: Users,
