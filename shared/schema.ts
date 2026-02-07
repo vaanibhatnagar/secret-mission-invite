@@ -33,6 +33,7 @@ export const puzzles = [
     subtitle: "Every heist begins with reconnaissance",
     riddle: "I have cities, but no houses live there. I have mountains, but no trees grow there. I have water, but no fish swim there. I have roads, but no cars drive there. What am I?",
     answer: "map",
+    acceptedAnswers: ["map", "maps"],
     hint: "You'd need one to plan any heist...",
   },
   {
@@ -41,6 +42,7 @@ export const puzzles = [
     subtitle: "Bypass the security system",
     riddle: "The more you take, the more you leave behind. What am I?",
     answer: "footsteps",
+    acceptedAnswers: ["footsteps", "footstep"],
     hint: "Be careful not to leave these at the crime scene...",
   },
   {
@@ -49,6 +51,7 @@ export const puzzles = [
     subtitle: "Crack the vault",
     riddle: "I can be cracked, made, told, and played. What am I?",
     answer: "joke",
+    acceptedAnswers: ["joke", "jokes"],
     hint: "Something that makes people laugh...",
   },
 ];

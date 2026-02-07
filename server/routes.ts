@@ -46,8 +46,9 @@ export async function registerRoutes(
       return res.status(404).json({ error: "Puzzle not found" });
     }
 
-    const correct =
-      answer?.trim().toLowerCase() === puzzle.answer.toLowerCase();
+    const normalized = answer?.trim().toLowerCase();
+    const accepted = puzzle.acceptedAnswers || [puzzle.answer.toLowerCase()];
+    const correct = accepted.some((a) => normalized === a.toLowerCase());
     return res.json({ correct });
   });
 
