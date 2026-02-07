@@ -77,12 +77,12 @@ export default function Invitation() {
     {
       icon: MapPin,
       label: "Location",
-      value: "The Secret Vault — our house. Exact coordinates disclosed upon confirmed RSVP.",
+      value: "The Secret Vault — our home. Exact coordinates disclosed upon confirmed RSVP.",
     },
     {
       icon: Users,
       label: "Dress Code",
-      value: "Come disguised as your favorite thief. From Ocean\u2019s 8 to Dhoom 2, Bunty Aur Bubli to the Louvre heist masterminds, Money Heist to Team Diamond \u2014 the aliases are endless.",
+      value: "Come disguised as your favorite thief — Ocean\u2019s 8, Dhoom 2, Bunty Aur Bubli, the Louvre heist masterminds, Money Heist, Team Diamond... the aliases are endless.",
     },
   ];
 
