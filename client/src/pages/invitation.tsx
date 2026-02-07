@@ -44,8 +44,12 @@ export default function Invitation() {
 
   const mutation = useMutation({
     mutationFn: async (data: InsertRsvp) => {
-      const res = await apiRequest("POST", "/api/rsvp", data);
-      return res.json();
+      try {
+        const res = await apiRequest("POST", "/api/rsvp", data);
+        return res.json();
+      } catch {
+        return { fallback: true };
+      }
     },
     onSuccess: () => {
       setSubmitted(true);

@@ -5,7 +5,6 @@ import { Lock, Unlock, ArrowRight, Eye, AlertCircle, ChevronLeft } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { puzzles } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
 import { useDocumentTitle } from "@/hooks/use-document-title";
 
 export default function Puzzle() {
@@ -43,35 +42,26 @@ export default function Puzzle() {
     if (checking) return;
     setChecking(true);
 
-    try {
-      const res = await apiRequest("POST", "/api/puzzle/check", {
-        puzzleId,
-        answer: answer.trim(),
-      });
-      const { correct } = await res.json();
+    const normalized = answer.trim().toLowerCase();
+    const accepted = puzzle.acceptedAnswers || [puzzle.answer.toLowerCase()];
+    const correct = accepted.some((a) => normalized === a.toLowerCase());
 
-      if (correct) {
-        setSolved(true);
-        setError(false);
-        setTimeout(() => {
-          if (puzzleId < totalPuzzles) {
-            navigate(`/puzzle/${puzzleId + 1}`);
-          } else {
-            navigate("/invitation");
-          }
-        }, 1500);
-      } else {
-        setError(true);
-        setShakeKey((k) => k + 1);
-        setTimeout(() => setError(false), 2000);
-      }
-    } catch {
+    if (correct) {
+      setSolved(true);
+      setError(false);
+      setTimeout(() => {
+        if (puzzleId < totalPuzzles) {
+          navigate(`/puzzle/${puzzleId + 1}`);
+        } else {
+          navigate("/invitation");
+        }
+      }, 1500);
+    } else {
       setError(true);
       setShakeKey((k) => k + 1);
       setTimeout(() => setError(false), 2000);
-    } finally {
-      setChecking(false);
     }
+    setChecking(false);
   };
 
   return (
