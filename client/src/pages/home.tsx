@@ -121,7 +121,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-8 bg-gradient-to-b from-transparent to-primary/40" />
             <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
-              Mala &amp; Abhishek&apos;s 50th — Top Secret
+              Mala &amp; Abhishek&apos;s Birthday Heist — Classified
             </span>
           </div>
         </motion.div>

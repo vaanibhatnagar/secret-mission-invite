@@ -67,22 +67,22 @@ export default function Invitation() {
     {
       icon: Calendar,
       label: "Date",
-      value: "Saturday, March 14, 2026",
+      value: "Monday, March 9, 2026",
     },
     {
       icon: Clock,
       label: "Time",
-      value: "8:00 PM - Late",
+      value: "6:30 PM",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "The Secret Vault (address sent after RSVP)",
+      value: "The Secret Vault — coordinates will be transmitted upon confirmed RSVP",
     },
     {
       icon: Users,
       label: "Dress Code",
-      value: "Black Tie / Glamorous Heist Chic",
+      value: "Come disguised as your favorite thief. From Ocean\u2019s 8 to Dhoom 2, Bunty Aur Bubli to the Louvre heist masterminds, Money Heist to Team Diamond \u2014 the aliases are endless.",
     },
   ];
 
@@ -141,7 +141,8 @@ export default function Invitation() {
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mx-auto leading-relaxed">
               The crew has been assembled. Your presence is required for the most
-              glamorous heist of the year.
+              risqu&eacute; heist of the year. Be ready to eat, drink, and crack
+              some clues to acquire a very special crystal.
             </p>
           </motion.div>
 
