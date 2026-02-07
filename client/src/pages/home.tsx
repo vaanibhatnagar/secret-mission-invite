@@ -80,7 +80,7 @@ export default function Home() {
           className="text-muted-foreground text-lg sm:text-xl max-w-md mb-12 leading-relaxed"
           data-testid="text-description"
         >
-          A mission awaits. Prove you&apos;re worthy to join the crew — or skip straight to the briefing.
+          Your mission, if you choose to accept it, awaits. Prove you&apos;re worthy to join the crew — or skip straight to the briefing.
         </motion.p>
 
         <motion.div
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-8 bg-gradient-to-b from-transparent to-primary/40" />
             <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
-              Scroll or Choose
+              Mala &amp; Abhishek&apos;s 50th — Top Secret
             </span>
           </div>
         </motion.div>

@@ -20,7 +20,7 @@ export const insertRsvpSchema = createInsertSchema(rsvps).omit({
   createdAt: true,
 }).extend({
   name: z.string().min(1, "Name is required"),
-  attendees: z.number().min(1, "At least 1 attendee").max(10, "Maximum 10 attendees"),
+  attendees: z.number().min(1, "At least 1 attendee").max(6, "Maximum 6 attendees"),
 });
 
 export type InsertRsvp = z.infer<typeof insertRsvpSchema>;

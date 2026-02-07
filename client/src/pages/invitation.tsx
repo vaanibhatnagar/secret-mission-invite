@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Calendar, Clock, MapPin, Users, Send, Check, PartyPopper } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, Send, Check, PartyPopper, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -29,6 +30,7 @@ import { useDocumentTitle } from "@/hooks/use-document-title";
 
 export default function Invitation() {
   const { toast } = useToast();
+  const [, navigate] = useLocation();
   const [submitted, setSubmitted] = useState(false);
   useDocumentTitle("Mission Briefing - The Heist");
 
@@ -111,6 +113,17 @@ export default function Invitation() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 py-16 sm:py-24">
+        <div className="mb-6">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => navigate("/")}
+            data-testid="button-back-home"
+          >
+            <ChevronLeft className="w-4 h-4 mr-1" />
+            Back to Home
+          </Button>
+        </div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -200,7 +213,7 @@ export default function Invitation() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                              {[1, 2, 3, 4, 5, 6].map((num) => (
                                 <SelectItem key={num} value={String(num)}>
                                   {num} {num === 1 ? "person" : "people"}
                                 </SelectItem>
